@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>list</title>
+</head>
+<body>
+    <ul>
+        <li> 제 목 | 저 자 | 날 짜 </li>
+    {% for article in articleList %}
+        <li><a href="/view/{{ article.id }}">{{ article.title }}</a> | {{ article.name }} | {{ article.cdate|date:"D d M Y" }}</li>
+    {% endfor %}
+    <br>
+    <Form action="/write/">
+        <input type="submit" value="글쓰기">
+    </Form>
+    </ul>
+</body>
+</html>
