@@ -14,6 +14,20 @@
     <br>
     Email : {{ article.email }}
     <br><br>
+    <h3>
+        Comments
+    </h3>
+    <a href=/view/{{ article.id }}/comment/new/> 댓글 쓰기 </a>
+    <ul>
+        {% for comment in article.comment_set.all %}
+        <li>
+            {{ comment.comment }}
+            <small> by {{ comment.name }}</small>
+        </li>
+        {% endfor %}
+
+    </ul>
+
     <Form action="/list/">
         <input type="submit" value="돌아가기">
     </Form>

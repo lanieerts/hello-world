@@ -8,3 +8,8 @@ class Article(models.Model):
     url = models.URLField()
     email = models.EmailField()
     cdate = models.DateTimeField(auto_now_add=True)
+
+class Comment(models.Model):
+    post = models.ForeignKey(Article)
+    name = models.CharField(max_length=50)
+    comment = models.CharField(max_length=50)
