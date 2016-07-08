@@ -30,7 +30,6 @@ def comment(request, num="1"):
             comment = form.save(commit=False)
             comment.post = Article.objects.get(id=num)
             comment.save()
-            return redirect('view', num)
     else:
         form = CommentForm()
     return render(request, 'comment.html', {'form':form})
